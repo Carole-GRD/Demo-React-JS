@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "produit" : "pain",
+        "prix" : 2.10,
+        "promo" : false
+    },
+    {
+        "id" : 2,
+        "produit" : "pomme",
+        "prix" : 0.95,
+        "promo" : false
+    },
+    {
+        "id" : 3,
+        "produit" : "pack d'eau",
+        "prix" : 3.50,
+        "promo" : true
+    }
+]

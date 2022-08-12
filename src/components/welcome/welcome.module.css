@@ -1,0 +1,13 @@
+.titre {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.paragraphe {
+    font-size: 1.3rem;
+    color: grey;
+}
+
+.textColor {
+    color: fuchsia;
+}
