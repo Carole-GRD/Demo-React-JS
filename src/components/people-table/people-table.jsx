@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import style from './people-table.module.css'
+import style from './people-table.module.css';
 
 // Composant (interne) pour afficher le head de la table
 const PeopleTableHead = () => (

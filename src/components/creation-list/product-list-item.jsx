@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 const ProductListItem = ({produit, prix, promo}) => {
     
-    const decimal = prix.toLocaleString('fr-be', {
+    const prixFormatted = prix.toLocaleString('fr-be', {
         style: 'currency',
         currency:'EUR'
     })
@@ -18,7 +18,7 @@ const ProductListItem = ({produit, prix, promo}) => {
             <p className={style.li}>{produit}</p>
             {/* <p className={clsx(style.li, promo && style.rouge)}> {prix + ' €'} </p> */}
             {/* -> pour la ligne de code ci-dessus, il faut supprimer la constante decimal qui n'est plus utilisé ! */}
-            <p className={clsx(style.li, promo && style.rouge)}> {decimal} </p>
+            <p className={clsx(style.li, promo && style.rouge)}> {prixFormatted} </p>
             <p className={style.li}>{promo && 'promo'}</p>
         </li>
     );

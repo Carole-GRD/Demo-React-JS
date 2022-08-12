@@ -8,9 +8,12 @@ const ProductList = ({productData}) => {
     );
 
     return (
-        <ul>
-            {productRender}
-        </ul>
+        <>
+            <h3>Liste des produits (Nb : {productData.length})</h3>
+            <ul>
+                {productRender}
+            </ul>
+        </>
     );
 };
 
