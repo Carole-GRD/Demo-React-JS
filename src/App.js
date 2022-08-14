@@ -10,7 +10,9 @@ import './App.css';
 // import Product from './components/data/product.json';
 // import ProductList from './components/creation-list/product-list';
 
-import Counter from './components/counter-exo/counter-exo';
+// import Counter from './components/counter-exo/counter-exo';
+
+import Calculator from './components/calculator-exo/calculator-exo';
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -43,9 +45,14 @@ function App() {
       {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
 
       {/* Exercice : Compte */}
-      <h1>Exercice : Compteur</h1>
-      <Counter number={1} />
+      {/* <h1>Exercice : Compteur</h1>
+      <Counter number={1} /> */}
 
+      {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
+
+      {/* Exercice : Calculatrice */}
+      <h1>Exercice : Calculatrice</h1>
+      <Calculator />
 
     </div>
   );
