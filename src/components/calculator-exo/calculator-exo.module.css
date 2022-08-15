@@ -9,7 +9,7 @@ input {
 }
 
 input:last-child {
-    width: 160px;
+    width: 100px;
     text-align: center;
 }
 
