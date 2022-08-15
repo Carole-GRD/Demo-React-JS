@@ -4,7 +4,12 @@ button {
 }
 
 input {
-    width: 70px;
+    width: 60px;
+    text-align: center;
+}
+
+input:last-child {
+    width: 160px;
     text-align: center;
 }
 

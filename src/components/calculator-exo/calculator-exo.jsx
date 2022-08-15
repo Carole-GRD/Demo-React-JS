@@ -23,30 +23,45 @@ const Calculator = () => {
     
     const handleCalcul = () => {
 
-        switch (operation) {
-            case '+' :
-                return setResult(Number(nombre1) + Number(nombre2));
-            case '-' :
-                return setResult(Number(nombre1) - Number(nombre2));
-            case 'x' :
-                return setResult(Number(nombre1) * Number(nombre2));
-            case ':' :
-                return setResult(Number(nombre1) / Number(nombre2));
-            default :
-                return '';
+        if (nombre1 && nombre2) {
+
+            if (operation === '+') {
+                setResult(Number(nombre1) + Number(nombre2));
+            }
+            if (operation === '-') {
+                setResult(Number(nombre1) - Number(nombre2));
+            }
+            if (operation === 'x') {
+                setResult(Number(nombre1) * Number(nombre2));
+            }
+            if (operation === ':') {
+                setResult(Number(nombre1) / Number(nombre2));
+            }
+            if (operation === '') {
+                setResult('Choisis une opération !');
+            }
+
+        } 
+        else {
+            setResult('Donnée(s) manquante(s) !');
         }
-        // if (operation === '+') {
-        //     setResult(Number(nombre1) + Number(nombre2));
+
+        // ------------------------------------------------------------
+        // switch (operation) {
+        //     case '+' :
+        //         return setResult(Number(nombre1) + Number(nombre2));
+        //     case '-' :
+        //         return setResult(Number(nombre1) - Number(nombre2));
+        //     case 'x' :
+        //         return setResult(Number(nombre1) * Number(nombre2));
+        //     case ':' :
+        //         return setResult(Number(nombre1) / Number(nombre2));
+        //     case '' :
+        //         return setResult('Choisis une opération !');
+        //     default :
+        //         return '';
         // }
-        // if (operation === '-') {
-        //     setResult(Number(nombre1) - Number(nombre2));
-        // }
-        // if (operation === 'x') {
-        //     setResult(Number(nombre1) * Number(nombre2));
-        // }
-        // if (operation === ':') {
-        //     setResult(Number(nombre1) / Number(nombre2));
-        // }
+        // ------------------------------------------------------------
 
     };
 
@@ -80,7 +95,7 @@ const Calculator = () => {
                 
                 <button type='submit' onClick={handleCalcul}>Calculer</button>
 
-                <input id='result' type='number' 
+                <input id='result' type='text' 
                     value={result}
                     onChange={(e) => setResult(e.target.value)}
                     readOnly />
