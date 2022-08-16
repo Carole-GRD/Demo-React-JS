@@ -27,28 +27,28 @@ const Calculator = () => {
 
         if (nombre1 && nombre2) {
 
-            // pour supprimer l'affichage du message si des données sont manquantes ou si l'opérateur n'est pas sélectionné
+            // pour supprimer l'affichage du message si des données sont manquantes ou si l'opérateur n'est pas sélectionné, ainsi que la réponse précédente
             setOperationManquante('');
             setDonneeManquante('');
             setResult('');
 
             if (operation === '+') {
-                setResult(Number(nombre1) + Number(nombre2));
+                setResult(parseFloat(nombre1) + parseFloat(nombre2));
             }
             if (operation === '-') {
-                setResult(Number(nombre1) - Number(nombre2));
+                setResult(parseFloat(nombre1) - parseFloat(nombre2));
             }
             if (operation === 'x') {
-                setResult(Number(nombre1) * Number(nombre2));
+                setResult(parseFloat(nombre1) * parseFloat(nombre2));
             }
             if (operation === ':') {
-                setResult(Number(nombre1) / Number(nombre2));
+                setResult(parseFloat(nombre1) / parseFloat(nombre2));
             }
             if (operation === '') {
                 // la phrase s'écrit dans l'input
                 // setResult('Choisis une opération !');
                 // --------------------------------------
-                // la phrase s'écrit au-dessus
+                // la phrase s'écrit au-dessus du formulaire
                 setOperationManquante('Choisis une opération !');
             }
         } 
@@ -88,15 +88,15 @@ const Calculator = () => {
             <form onSubmit={handleSubmit} className={style}>
                 
                 <label htmlFor='nb1'>Nb1 :</label>
-                <input id='nb1' type='number' name='nb1' 
+                <input id='nb1' type='text' name='nb1' 
                     value={nombre1} 
-                    onChange={(e) => setNombre1(e.target.value)} />
+                    onChange={e => setNombre1(e.target.value)} />
             
             
                 <label htmlFor='nb1'>Opération :</label>
                 <select id='operation' 
                     value={operation} 
-                    onChange={(e) => setOperation(e.target.value)}>
+                    onChange={e => setOperation(e.target.value)}>
                     <option value='' disabled={true}></option>
                     <option value='+'>+</option>
                     <option value='-'>-</option>
@@ -106,15 +106,15 @@ const Calculator = () => {
             
             
                 <label htmlFor='nb2'>Nb2 :</label>
-                <input id='nb2' type='number' name='nb2' 
+                <input id='nb2' type='text' name='nb2' 
                     value={nombre2} 
-                    onChange={(e) => setNombre2(e.target.value)} />
+                    onChange={e => setNombre2(e.target.value)} />
                 
                 <button type='submit' onClick={handleCalcul}>Calculer</button>
 
                 <input id='result' type='number' 
                     value={result}
-                    onChange={(e) => setResult(e.target.value)}
+                    onChange={e => setResult(e.target.value)}
                     readOnly />
             </form>
         </>
